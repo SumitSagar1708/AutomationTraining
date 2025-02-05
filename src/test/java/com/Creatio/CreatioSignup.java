@@ -17,7 +17,7 @@ public class CreatioSignup {
 		
 		//click on signup button
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//button[contains(@class, 'contained mat-primary button')]")).click();
+		driver.findElement(By.xpath("//crt-button[@class ='sign-up-button']//button[@type='button']")).click();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//input[@aria-label='Business email']")).sendKeys("abc@example.com");
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Abc@example123");
@@ -31,7 +31,7 @@ public class CreatioSignup {
 		driver.findElement(By.xpath("//input[@aria-label='Website']")).sendKeys("https://www.fiserv.com/");
 		driver.findElement(By.xpath("//input[@aria-label='Country']")).sendKeys("INDIA");
 		driver.findElement(By.xpath("//input[@aria-label='Phone']")).sendKeys("999999999");
-		driver.findElement(By.xpath("//div[@class='sign-form-button']//button[@type='button'}")).click();
+		driver.findElement(By.xpath("//div[@class='sign-form-button']//button[@type='button']")).click();
 		
 
 	}
