@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com</groupId>
+	<groupId>com.Creatio</groupId>
 	<artifactId>AutomationTraingProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -43,6 +43,21 @@
 			<version>2.17.0</version>
 		</dependency>
 
+		<!--selenium-java for web automation /browser automation -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.28.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 
@@ -78,6 +93,4 @@
 		</pluginManagement>
 
 	</build>
-
-
 </project>
