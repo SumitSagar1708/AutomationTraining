@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class CreatioLogin {
@@ -26,15 +28,13 @@ public class CreatioLogin {
 
 		// Validate error message
 
-		/*
-		 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); WebElement
-		 * messageElement = driver.findElement(By.
-		 * xpath("//span[contains(text()'Invalid email or password']")); String
-		 * actualMessage = messageElement.getText();
-		 * Assert.assertEquals(actualMessage,"Invalid email or password",
-		 * "Error message does not match!");
-		 */
-		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions
+				.numberOfElementsToBeMoreThan(By.xpath("//span[text()='Invalid email or password']"), 0));
+
+		WebElement messageElement = driver.findElement(By.xpath("//span[text()='Invalid email or password']"));
+		String actualMessage = messageElement.getText();
+		Assert.assertEquals(actualMessage, "Invalid email or password", "Error message does not match!");
 
 		// validate all social media link
 
@@ -47,8 +47,8 @@ public class CreatioLogin {
 		// Facebook
 		driver.findElement(By.xpath("//img[@class='icon-facebook']")).click();
 		driver.navigate().back();
-		
-		driver.close();
+
+		driver.quit();
 
 	}
 

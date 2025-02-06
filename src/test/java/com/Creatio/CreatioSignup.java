@@ -3,7 +3,9 @@ package com.Creatio;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CreatioSignup {
@@ -17,7 +19,9 @@ public class CreatioSignup {
 		
 		//click on signup button
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("//crt-button[@class ='sign-up-button']//button[@type='button']")).click();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		WebElement signUpBtn = driver.findElement(By.xpath("//crt-button[@class ='sign-up-button']//button[@type='button']"));
+		js.executeScript("arguments[0].click()", signUpBtn);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//input[@aria-label='Business email']")).sendKeys("abc@example.com");
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Abc@example123");
